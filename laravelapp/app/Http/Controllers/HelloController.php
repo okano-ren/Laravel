@@ -9,8 +9,8 @@ class HelloController extends Controller
 {
     public function index() {
 
-        $data=['msg'=>'これはコントローラから渡されたメッセージです。'];
-        return view('hello.index',$data);
+        
+       return view('hello.index',['message'=>'Hello!']);
     }
    
     
