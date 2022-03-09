@@ -7,11 +7,10 @@
 
 @section('content')
     <p>ここが本文のコンテンツです。</p>
-    <p>Controller value<br>'message'={{$message}}</p>
-    <P>ViewComposer value<br>'view_message'={{$view_message}}</P>
-   
+    <p>これは、<middleware>google.com</middleware>へのリンクです。</p>
+    <p>これは、<middleware>yahoo.co.jp</middleware>へのリンクです。</p>
 @endsection
 
 @section('footer')
-copyright 2020 tuyano.
+    copyright 2020 tuyano.
 @endsection
