@@ -1,0 +1,21 @@
+@startuml
+actor ユーザ
+boundary ブラウザ
+control web.php as w
+control Kouka1_1Controller as k
+boundary kouka1_1.index.blade.php as i
+boundary layouts.kouka1_1.blade.php as lk
+boundary components.menu.blade.php as c
+boundary components.subview.blade.php as s
+
+ユーザ -> ブラウザ : 該当ページをリクエスト[/kouka1_1]
+ブラウザ -> w : GET[/kouka1_1]
+w -> k : @index
+k -> i
+i -> lk : @extends
+lk --> i
+i -> c : @component
+c --> i
+i -> s : @include
+s --> i
+@enduml

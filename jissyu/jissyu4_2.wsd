@@ -1,0 +1,21 @@
+@startuml jissyu4_2
+actor ユーザ
+boundary ブラウザ
+control web.php as w
+control Jissyu4_2Controller as j
+boundary input.blade.php as i
+boundary output.blade.php as o
+
+ユーザ -> ブラウザ : 該当ページをリクエスト[/jissyu7]
+ブラウザ -> w : GET[/jissyu7]
+w -> j :@index
+j -> i
+ユーザ -> i : 送信ボタンを押下
+i -> w : POST
+w -> j : @post
+alt 成功
+j -> o
+else エラー発生
+j -> i
+end
+@enduml

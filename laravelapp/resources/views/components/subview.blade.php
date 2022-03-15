@@ -10,3 +10,4 @@
        <p class="subview_title">{{$subview_title}}</p>
        <p class="subview_content">{{$subview_content}}</p>
     </div>
+

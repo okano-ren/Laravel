@@ -1,0 +1,24 @@
+@startuml
+actor ユーザ
+boundary ブラウザ
+control web.php as w
+control Kouka1_2Controller as c
+boundary input.blade.php as i
+control Kouka1_2Request as r
+boundary output.blade.php as o
+
+ユーザ -> ブラウザ : 該当ページをリクエスト[/kouka1_2]
+ブラウザ -> w : GET[/kouka1_2]
+w -> c : @index
+c -> i
+ユーザ -> i : 送信ボタンを押下
+i -> w : POST
+w -> c : @post
+c -> r : フォームリクエスト
+r -> c
+alt 成功
+c -> o
+else エラー発生
+c -> i
+end
+@enduml
