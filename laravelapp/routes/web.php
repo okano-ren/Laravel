@@ -11,10 +11,12 @@
 |
 */
 
+use App\Http\Controllers\HelloController;
 use App\Http\Controllers\Jissyu4_1Controller;
 use App\Http\Controllers\Kouka1_1Controller;
 use App\Http\Middleware\HelloMiddleware;
 use Illuminate\Contracts\Queue\Job;
+
 
 //テキスト用
 
@@ -55,13 +57,20 @@ Route::get('board','BoardController@index');
 Route::get('board/add','BoardController@add');
 Route::post('board/add','BoardController@create');
 
+Route::resource('rest','RestappController');
+
+Route::get('hello/rest','HelloController@rest');
+
+Route::get('hello/session','HelloController@ses_get');
+Route::post('hello/session','HelloController@ses_put');
+
 // 実習問題用
 // 2-1
 Route::get('jissyu', 'JissyuController@index');
 
 // 3-2
 Route::get('jissyu4','Jissyu3_2Controller@index');
-Route::post('jissyu4', 'Jissyu3_2Controller@post');
+Route::post('jissyu4','Jissyu3_2Controller@post');
 
 //3-3
 Route::get('jissyu5','Jissyu3_3Controller@index');
@@ -93,6 +102,10 @@ Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
 Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
 
+// 7-1
+Route::resource('Jissyu7_1', 'Jissyu7_1Controller');
+Route::post('Jissyu7_1/post', 'Jissyu7_1Controller@find');	
+Route::get('Jissyu7_1/{id}/del', 'Jissyu7_1Controller@del');
 
 
 //kouka
