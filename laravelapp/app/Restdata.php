@@ -1,20 +1,22 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Restdata extends Model
 {
-    protected $table='restdata';
-    protected $guarded=array('id');
-    public static $rules=array(
-        'message'=>'required',
-        'url'=>'required'
-    );
+   protected $table = 'restdata';
+   protected $guarded = array('id');
 
-    public function getData()
-    {
-        return $this->id . ':' . $this->message . '(' . $this->url . ')';
-    }
+   public static $rules = array(
+       'message' => 'required',
+       'url' => 'required'
+   );
+
+   public function getData()
+   {
+       return $this->id . ':' . $this->mssage
+          . '(' . $this->url . ')';
+   }
+
 }

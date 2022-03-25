@@ -102,6 +102,12 @@ Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
 Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
 
+//6-4
+Route::get('jissyu15', 'Jissyu6_4Controller@index');
+Route::get('jissyu15/add', 'Jissyu6_4Controller@add');
+Route::post('jissyu15/create', 'Jissyu6_3Controller@create');
+
+
 // 7-1
 Route::resource('Jissyu7_1', 'Jissyu7_1Controller');
 Route::post('Jissyu7_1/post', 'Jissyu7_1Controller@find');	
@@ -112,3 +118,20 @@ Route::get('Jissyu7_1/{id}/del', 'Jissyu7_1Controller@del');
 
 //1-1
 Route::get('kouka1_1','Kouka1_1Controller@index');
+
+// 2-1
+Route::get('kouka2_1', 'Kouka2_1Controller@index');
+Route::post('kouka2_1/show', 'Kouka2_1Controller@find');
+
+// 2-2
+Route::get('kouka2_2', 'Kouka2_2Controller@index');
+Route::post('kouka2_2/find', 'Kouka2_2Controller@find');
+Route::get('kouka2_2/show', 'Kouka2_2Controller@show');
+Route::get('kouka2_2/add', 'Kouka2_2Controller@add');
+Route::post('kouka2_2/create', 'Kouka2_2Controller@create');
+Route::get('kouka2_2/edit', 'Kouka2_2Controller@edit');
+Route::post('kouka2_2/update', 'Kouka2_2Controller@update');
+Route::get('kouka2_2/del', 'Kouka2_2Controller@del');
+Route::post('kouka2_2/remove', 'Kouka2_2Controller@remove');
+
+

@@ -12,8 +12,8 @@ class HelloController extends Controller
 {
     public function index(Request $request) 
     {   
-       $items=DB::table('people')->orderBy('age','asc')->get();
-        
+       $user=Auth::user();
+       $sort=$request->sort
        return view('hello.index',['items'=>$items]);
     }
     public function post(Request $request) 
