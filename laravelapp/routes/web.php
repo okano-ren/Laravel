@@ -26,7 +26,8 @@ Route::get('/', function () {
 
 
 
-Route::get('hello','HelloController@index');
+Route::get('hello','HelloController@index')
+->middleware('auth');
 
 Route::post('hello','HelloController@post');
 
@@ -63,6 +64,9 @@ Route::get('hello/rest','HelloController@rest');
 
 Route::get('hello/session','HelloController@ses_get');
 Route::post('hello/session','HelloController@ses_put');
+
+Route::get('hello/auth','HelloController@getAuth');
+Route::post('hello/auth','HelloController@postAuth');
 
 // 実習問題用
 // 2-1
@@ -135,3 +139,7 @@ Route::get('kouka2_2/del', 'Kouka2_2Controller@del');
 Route::post('kouka2_2/remove', 'Kouka2_2Controller@remove');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
